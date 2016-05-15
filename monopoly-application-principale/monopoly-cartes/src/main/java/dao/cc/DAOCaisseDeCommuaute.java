@@ -5,5 +5,5 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 
 public interface DAOCaisseDeCommuaute {
-	HashMap<Integer, String[]> getListCartesChances() throws IOException, URISyntaxException;
+	HashMap<Integer, String[]> getListCartesCC() throws IOException, URISyntaxException;
 }

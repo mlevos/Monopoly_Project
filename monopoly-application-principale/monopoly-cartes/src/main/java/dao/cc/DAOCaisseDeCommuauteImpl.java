@@ -17,7 +17,7 @@ public class DAOCaisseDeCommuauteImpl implements DAOCaisseDeCommuaute{
 		path_csv_carte = path;
 	}
 
-	public HashMap<Integer, String[]> getListCartesChances() throws IOException, URISyntaxException {
+	public HashMap<Integer, String[]> getListCartesCC() throws IOException, URISyntaxException {
 		/*
 		 * Méthode de récupération des cartes de caisse de caummunaute 
 		 */

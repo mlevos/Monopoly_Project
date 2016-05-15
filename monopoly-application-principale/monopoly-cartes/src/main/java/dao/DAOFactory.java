@@ -6,11 +6,11 @@ import dao.chance.DAOChance;
 import dao.chance.DAOChanceImpl;
 
 public class DAOFactory {
-	public DAOChance getDAOChance(){
+	public static DAOChance getDAOChance(){
 		return new DAOChanceImpl(DAOFactoryProperties.getResourcesCarte()); 
 	}
 	
-	public DAOCaisseDeCommuaute getDAOCaisseDeCommuaute(){
+	public static DAOCaisseDeCommuaute getDAOCaisseDeCommuaute(){
 		return new DAOCaisseDeCommuauteImpl(DAOFactoryProperties.getResourcesCarte()); 
 	}
 

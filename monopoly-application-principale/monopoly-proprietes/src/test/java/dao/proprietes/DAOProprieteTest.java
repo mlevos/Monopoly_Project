@@ -1,4 +1,4 @@
-package dao;
+package dao.proprietes;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -7,6 +7,7 @@ import java.net.URISyntaxException;
 
 import org.junit.Test;
 
+import dao.DAOFactory;
 import dao.propriete.DAOPropriete;
 
 public class DAOProprieteTest{
