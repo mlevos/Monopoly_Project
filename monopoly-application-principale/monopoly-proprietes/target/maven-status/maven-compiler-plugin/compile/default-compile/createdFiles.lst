@@ -1,3 +1,5 @@
 dao\propriete\DAOProprieteImpl.class
 dao\DAOFactory.class
+dto\proprietes\DTOMonopole.class
+dto\proprietes\DTOTerrain.class
 dao\propriete\DAOPropriete.class

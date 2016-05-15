@@ -21,7 +21,6 @@ public class DAOProprieteImpl implements DAOPropriete{
 		path_csv_info = path; 
 	}
 	
-	@Override
 	public HashMap<Integer, String[]> getListProprietes() throws IOException, URISyntaxException {
 		/*
 		 * Méthode de récupération des propriété

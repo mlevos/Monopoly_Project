@@ -16,7 +16,6 @@ public class DAOChanceImpl implements DAOChance{
 		path_csv_carte = path; 
 	}
 	
-	@Override
 	public HashMap<Integer, String[]> getListCartesChances() throws IOException, URISyntaxException {
 		/*
 		 * Méthode de récupération des cartes chances 
