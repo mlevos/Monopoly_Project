@@ -1,5 +1,6 @@
 package dao.cartes.cc;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -22,8 +23,9 @@ public class DAOCaisseDeCommuauteImpl implements DAOCaisseDeCommuaute{
 	 * @return 
 	 */
 	public HashMap<Integer, String[]> getListCartesCC() throws IOException, URISyntaxException {
-		HashMap<Integer, String[]> hashMapCases = new  HashMap<Integer, String[]>(); 
-		Reader fileInfo = new FileReader(path_csv_carte);
+		HashMap<Integer, String[]> hashMapCases = new  HashMap<Integer, String[]>();
+		File file = new File(DAOCaisseDeCommuauteImpl.class.getResource(path_csv_carte).toURI()); 
+		Reader fileInfo = new FileReader(file);
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().parse(fileInfo);
 		for (CSVRecord record : records) {
 			if(record.get("GROUPE") == "CC"){

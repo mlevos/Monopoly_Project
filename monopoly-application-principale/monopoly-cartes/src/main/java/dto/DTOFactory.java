@@ -68,7 +68,7 @@ public class DTOFactory {
 	 * @throws IOException
 	 * @throws URISyntaxException
 	 */
-	public List<DTOChance> getListDTOChance() throws IOException, URISyntaxException{
+	public static List<DTOChance> getListDTOChance() throws IOException, URISyntaxException{
 		List<DTOChance> listCartesChances = new ArrayList<DTOChance>();
 		DAOChance dao = DAOFactory.getDAOChance(); 
 		HashMap<Integer, String[]> hashMapCartesChance = dao.getListCartesChances();
@@ -127,7 +127,7 @@ public class DTOFactory {
 	 * @throws IOException
 	 * @throws URISyntaxException
 	 */
-	public List<DTOCaisseDeCommunaute> getListDTOCaisseDeCommunaute() throws IOException, URISyntaxException{
+	public static List<DTOCaisseDeCommunaute> getListDTOCaisseDeCommunaute() throws IOException, URISyntaxException{
 		List<DTOCaisseDeCommunaute> listCartesCC = new ArrayList<DTOCaisseDeCommunaute>();
 		DAOCaisseDeCommuaute dao = DAOFactory.getDAOCaisseDeCommuaute(); 
 		HashMap<Integer, String[]> hashMapCartesCC = dao.getListCartesCC();
