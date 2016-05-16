@@ -29,7 +29,7 @@ NUMERO,NOM,EVENEMENT,TYPE PROPRIETE,GROUPE,ACHAT,COUT IMMOBILIER,LOYERS
 28,Place de la Bourse,,terrain,jaune,26000,15000,2200.11000.33000.80000.97500.115000
 29,Compagnie de Distribution des Eaux,,monopole,compagnies,15000,,
 30,Rue La Fayette,,terrain,jaune,28000,15000,2400.12000.36000.85000.102500.120000
-31,Allez en prison,prison,,,,,
+31,Allez en prison,prison.prison,,,,,
 32,Avenue de Breteuil,,terrain,vert,30000,20000,2600.13000.39000.90000.110000.127500
 33,Avenue Foch,,terrain,vert,30000,20000,2600.13000.39000.90000.110000.127500
 34,Caisse de communaute,carte.CC,,,,,

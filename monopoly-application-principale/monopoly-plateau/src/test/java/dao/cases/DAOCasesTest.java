@@ -13,7 +13,7 @@ public class DAOCasesTest {
 	
 	@Test
 	public void getProprieteTest() throws URISyntaxException{
-		DAOCases getterCases = DAOFactory.getDAOCases(); 
+		DAOCase getterCases = DAOFactory.getDAOCases(); 
 		try {
 			assertNotNull(getterCases.getCases());
 		} catch (IOException e) {

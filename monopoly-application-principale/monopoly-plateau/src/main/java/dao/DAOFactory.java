@@ -1,11 +1,11 @@
 package dao;
 
-import dao.cases.DAOCases;
-import dao.cases.DAOCasesImpl;
+import dao.cases.DAOCase;
+import dao.cases.DAOCaseImpl;
 
 public class DAOFactory {
 	
-	public static DAOCases getDAOCases(){
-		return new DAOCasesImpl(DAOFactoryProperties.getResourcesInfo()); 
+	public static DAOCase getDAOCases(){
+		return new DAOCaseImpl(DAOFactoryProperties.getResourcesInfo()); 
 	}
 }

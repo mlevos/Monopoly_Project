@@ -9,10 +9,10 @@ import java.util.HashMap;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
-public class DAOCasesImpl implements DAOCases{
+public class DAOCaseImpl implements DAOCase{
 	private String path_csv_info;
 	
-	public DAOCasesImpl(String path) {
+	public DAOCaseImpl(String path) {
 		path_csv_info = path; 	
 	}
 	
