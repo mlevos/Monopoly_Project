@@ -20,19 +20,19 @@ public class DAOChanceImpl implements DAOChance{
 		/*
 		 * Méthode de récupération des cartes chances 
 		 */
-		HashMap<Integer, String[]> hashMapCases = new  HashMap<Integer, String[]>(); 
+		HashMap<Integer, String[]> hashMapCartesChance = new  HashMap<Integer, String[]>(); 
 		Reader fileInfo = new FileReader(path_csv_carte);
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().parse(fileInfo);
 		for (CSVRecord record : records) {
 			if(record.get("GROUPE") == "chance"){
 				int id = Integer.parseInt(record.get("NUMERO"));
-				String groupe = record.get("GROUPE"); 
-				String intitule = record.get("EVENEMENT"); 
+				String intitule = record.get("INTITULE");
+				String evenement = record.get("EVENEMENT");
 				String parametres = record.get("PARAMETRES"); 
-				hashMapCases.put(id , (new String[]{groupe, intitule, parametres}));
+				hashMapCartesChance.put(id , (new String[]{intitule, evenement, parametres}));
 			}
 		}
-		return hashMapCases;
+		return hashMapCartesChance;
 	}
 	
 	

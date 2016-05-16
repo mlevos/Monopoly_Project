@@ -16,21 +16,22 @@ public class DAOCaisseDeCommuauteImpl implements DAOCaisseDeCommuaute{
 	public DAOCaisseDeCommuauteImpl(String path) {
 		path_csv_carte = path;
 	}
-
+	
+	/**
+	 * @author TiTiaso
+	 * @return 
+	 */
 	public HashMap<Integer, String[]> getListCartesCC() throws IOException, URISyntaxException {
-		/*
-		 * Méthode de récupération des cartes de caisse de caummunaute 
-		 */
 		HashMap<Integer, String[]> hashMapCases = new  HashMap<Integer, String[]>(); 
 		Reader fileInfo = new FileReader(path_csv_carte);
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().parse(fileInfo);
 		for (CSVRecord record : records) {
 			if(record.get("GROUPE") == "CC"){
 				int id = Integer.parseInt(record.get("NUMERO"));
-				String groupe = record.get("GROUPE"); 
-				String intitule = record.get("EVENEMENT"); 
+				String intitule = record.get("INTITULE");
+				String evenement = record.get("EVENEMENT");
 				String parametres = record.get("PARAMETRES"); 
-				hashMapCases.put(id , (new String[]{groupe, intitule, parametres}));
+				hashMapCases.put(id , (new String[]{intitule,evenement, parametres}));
 			}
 		}
 		return hashMapCases;

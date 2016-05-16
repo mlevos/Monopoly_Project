@@ -99,8 +99,9 @@ public class DTOFactory {
 		HashMap<Integer, String[]> hashMapPropriete = dao.getListProprietes();
 		
 		//Consctruction de chaque terrain par groupe 
-		for(String[] parametres : hashMapPropriete.values()){
-	        String groupe = parametres[1]; 
+		for(String[] values : hashMapPropriete.values()){
+	        String groupe = values[1];
+	        String[] parametres = values;
 	        if(arrayGroupeTerrain.contains(groupe)){
 	        	DTOTerrain terrain = getDTOTerrain(groupe , parametres); 
         		listTerrains.add(terrain);
@@ -148,8 +149,9 @@ public class DTOFactory {
 		HashMap<Integer, String[]> hashMapPropriete = dao.getListProprietes();
 		
 		//Consctruction de chaque terrain par groupe 
-		for(String[] parametres : hashMapPropriete.values()){
-	        String groupe = parametres[1]; 
+		for(String[] values : hashMapPropriete.values()){
+	        String groupe = values[1];
+	        String[] parametres = values; 
 	        if(arrayGroupeMonopole.contains(groupe)){
 	        	DTOMonopole monopoles = getDTOMonopole(groupe , parametres); 
         		listMonopoles.add(monopoles);
