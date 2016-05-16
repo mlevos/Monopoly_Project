@@ -1,4 +1,4 @@
-package dao.chance;
+package dao.cartes.chance;
 
 import java.io.IOException;
 import java.net.URISyntaxException;

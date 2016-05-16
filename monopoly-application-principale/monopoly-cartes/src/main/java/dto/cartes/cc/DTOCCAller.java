@@ -1,4 +1,4 @@
-package dto.cc;
+package dto.cartes.cc;
 
 public class DTOCCAller extends DTOCaisseDeCommunaute{
 

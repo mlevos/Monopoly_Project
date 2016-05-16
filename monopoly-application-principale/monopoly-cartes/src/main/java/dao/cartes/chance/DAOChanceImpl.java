@@ -1,4 +1,4 @@
-package dao.cc;
+package dao.cartes.chance;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,23 +9,22 @@ import java.util.HashMap;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
-public class DAOCaisseDeCommuauteImpl implements DAOCaisseDeCommuaute{
-	
+public class DAOChanceImpl implements DAOChance{
 	private String path_csv_carte;
 	
-	public DAOCaisseDeCommuauteImpl(String path) {
-		path_csv_carte = path;
+	public DAOChanceImpl(String path) {
+		path_csv_carte = path; 
 	}
-
-	public HashMap<Integer, String[]> getListCartesCC() throws IOException, URISyntaxException {
+	
+	public HashMap<Integer, String[]> getListCartesChances() throws IOException, URISyntaxException {
 		/*
-		 * Méthode de récupération des cartes de caisse de caummunaute 
+		 * Méthode de récupération des cartes chances 
 		 */
 		HashMap<Integer, String[]> hashMapCases = new  HashMap<Integer, String[]>(); 
 		Reader fileInfo = new FileReader(path_csv_carte);
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().parse(fileInfo);
 		for (CSVRecord record : records) {
-			if(record.get("GROUPE") == "CC"){
+			if(record.get("GROUPE") == "chance"){
 				int id = Integer.parseInt(record.get("NUMERO"));
 				String groupe = record.get("GROUPE"); 
 				String intitule = record.get("EVENEMENT"); 
@@ -35,4 +34,7 @@ public class DAOCaisseDeCommuauteImpl implements DAOCaisseDeCommuaute{
 		}
 		return hashMapCases;
 	}
+	
+	
+
 }

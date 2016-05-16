@@ -1,6 +1,6 @@
-package dto.chance;
+package dto.cartes.chance;
 
-import dto.DTOCartes;
+import dto.cartes.DTOCartes;
 
 public abstract class DTOChance extends DTOCartes{
 

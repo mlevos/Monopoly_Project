@@ -8,6 +8,7 @@ import java.net.URISyntaxException;
 import org.junit.Test;
 
 import dao.DAOFactory;
+import dao.cartes.cc.DAOCaisseDeCommuaute;
 
 public class DAOCaisseDeCommunauteTest {
 	

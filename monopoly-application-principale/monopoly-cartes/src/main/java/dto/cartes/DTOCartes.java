@@ -1,4 +1,4 @@
-package dto;
+package dto.cartes;
 
 public abstract class DTOCartes {
 	protected String intitule = new String(); 

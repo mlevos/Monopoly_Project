@@ -1,6 +1,6 @@
-package dto.cc;
+package dto.cartes.cc;
 
-import dto.DTOCartes;
+import dto.cartes.DTOCartes;
 
 public abstract class DTOCaisseDeCommunaute extends DTOCartes{
 

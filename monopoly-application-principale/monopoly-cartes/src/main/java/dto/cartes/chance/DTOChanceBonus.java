@@ -1,8 +1,8 @@
-package dto.cc;
+package dto.cartes.chance;
 
-public class DTOCCChoix extends DTOCaisseDeCommunaute{
+public class DTOChanceBonus extends DTOChance{
 
-	public DTOCCChoix(String intitule, String parametres) {
+	public DTOChanceBonus(String intitule, String parametres) {
 		super(intitule, parametres);
 		// TODO Auto-generated constructor stub
 	}

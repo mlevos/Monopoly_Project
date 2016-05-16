@@ -1,4 +1,4 @@
-package dao.cc;
+package dao.cartes.cc;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
