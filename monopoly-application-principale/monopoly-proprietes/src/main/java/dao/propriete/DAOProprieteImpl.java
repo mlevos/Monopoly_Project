@@ -25,16 +25,16 @@ public class DAOProprieteImpl implements DAOPropriete{
 		/*
 		 * Méthode de récupération des propriété
 		 */
-		HashMap<Integer, String[]> hashMapCases = new  HashMap<Integer, String[]>();
+		HashMap<Integer, String[]> hashMapPropriete = new  HashMap<Integer, String[]>();
 		File file = new File(DAOProprieteImpl.class.getResource(path_csv_info).toURI()); 
 		Reader fileInfo = new FileReader(file);
 		Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().parse(fileInfo);
 		for (CSVRecord record : records) {
-			String typePropriete = new String(); 
-			if((typePropriete = record.get("TYPE PROPRIETE")) != null){
+			String groupe = new String(); 
+			if((groupe = record.get("GROUPE")) != null){
 				// Selection des propriétés
 				int id = Integer.parseInt(record.get("NUMERO")); 
-				String nomPropriete = record.get("NOM");
+				String nom = record.get("NOM");
 				String achat = record.get("ACHAT");
 				String coutImmobilier = new String(); 
 				if((coutImmobilier = record.get("COUT IMMOBILIER")) == null){
@@ -46,10 +46,10 @@ public class DAOProprieteImpl implements DAOPropriete{
 					// dans le cas où la propriété n'a pas de loyers ( exempel gars )
 					loyers = "NONE"; 
 				}
-				 hashMapCases.put(id , (new String[]{nomPropriete, typePropriete, achat,coutImmobilier,loyers})); 
+				 hashMapPropriete.put(id , (new String[]{nom, groupe, achat,coutImmobilier,loyers})); 
 			}
 		}
-		return hashMapCases;
+		return hashMapPropriete;
 	}
 	public String getPath_csv_info() {
 		return path_csv_info;
