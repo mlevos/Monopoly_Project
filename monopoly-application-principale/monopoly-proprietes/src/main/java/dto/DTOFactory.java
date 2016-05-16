@@ -25,8 +25,7 @@ public class DTOFactory {
 	
 	private static List<String> arrayGroupeTerrain = Arrays.asList(
 			"mauve", "rouge", "jaune", "orange","bleu roi","bleu ciel", "vert","violet");
-	private static List<String> arrayGroupeMonopole = Arrays.asList(
-			"mauve", "rouge", "jaune", "orange","bleu roi","bleu ciel", "vert","violet");
+	private static List<String> arrayGroupeMonopole = Arrays.asList("gares", "compagnies");
 	private static final String regexLoyersTerrains = "\\."; 
 	
 	
@@ -118,7 +117,9 @@ public class DTOFactory {
 		 */
 		String nom = parametres[0]; 
 		int achat = Integer.parseInt(parametres[2]);
-		int loyer = Integer.parseInt(parametres[4]);
+		int loyer = 0; 
+		if(!(parametres[4].isEmpty())) // Mes compagnie n'ont pas de loyer fixe au départ
+			loyer = Integer.parseInt(parametres[4]);
 
 		
 		if(groupe.equals("gares")){
@@ -132,7 +133,7 @@ public class DTOFactory {
 			return null;
 		}
 	}
-	public static List<DTOTerrain> getLisDTOMonopoles() throws IOException, URISyntaxException{
+	public static List<DTOMonopole> getLisDTOMonopoles() throws IOException, URISyntaxException{
 		/*
 		 * Méthode sortant la liste de tous les terrains présente dans le fichier info.csv
 		 */
@@ -141,7 +142,7 @@ public class DTOFactory {
 		DAOPropriete dao = DAOFactory.getDAOPropriete();
 		
 		//Création de la liste resultante
-		List<DTOTerrain> listTerrains = new ArrayList<DTOTerrain>();
+		List<DTOMonopole> listMonopoles = new ArrayList<DTOMonopole>();
 		
 		//récupération des informations du fichier csv
 		HashMap<Integer, String[]> hashMapPropriete = dao.getListProprietes();
@@ -149,11 +150,11 @@ public class DTOFactory {
 		//Consctruction de chaque terrain par groupe 
 		for(String[] parametres : hashMapPropriete.values()){
 	        String groupe = parametres[1]; 
-	        if(arrayGroupeTerrain.contains(groupe)){
-	        	DTOTerrain terrain = getDTOTerrain(groupe , parametres); 
-        		listTerrains.add(terrain);
+	        if(arrayGroupeMonopole.contains(groupe)){
+	        	DTOMonopole monopoles = getDTOMonopole(groupe , parametres); 
+        		listMonopoles.add(monopoles);
 	        }     	 
 	    }		
-		return listTerrains;	
+		return listMonopoles;	
 	}
 }

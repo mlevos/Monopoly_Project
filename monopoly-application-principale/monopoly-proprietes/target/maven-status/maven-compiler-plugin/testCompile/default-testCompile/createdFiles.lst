@@ -1,2 +1,3 @@
 dao\proprietes\DAOProprieteTest.class
+dto\proprietes\terrains\DTOMonopolesTest.class
 dto\proprietes\terrains\DTOTerrainTest.class
