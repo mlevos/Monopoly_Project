@@ -8,5 +8,4 @@ public class DAOFactory {
 	public static DAOCases getDAOCases(){
 		return new DAOCasesImpl(DAOFactoryProperties.getResourcesInfo()); 
 	}
-
 }
