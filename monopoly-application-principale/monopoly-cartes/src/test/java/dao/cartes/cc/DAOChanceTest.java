@@ -1,4 +1,4 @@
-package dao.cc;
+package dao.cartes.cc;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -8,19 +8,21 @@ import java.net.URISyntaxException;
 import org.junit.Test;
 
 import dao.DAOFactory;
-import dao.cartes.cc.DAOCaisseDeCommuaute;
+import dao.cartes.chance.DAOChance;
 
-public class DAOCaisseDeCommunauteTest {
+
+public class DAOChanceTest {
 	
 	@Test
-	public void getCaisseDeCommunauteTest() throws URISyntaxException{
-		DAOCaisseDeCommuaute getterCC = DAOFactory.getDAOCaisseDeCommuaute(); 
+	public void getCartesChanceTest() throws URISyntaxException{
+		DAOChance getterChance = DAOFactory.getDAOChance(); 
 		try {
-			assertNotNull(getterCC.getListCartesCC());
+			assertNotNull(getterChance.getListCartesChances());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 
 }
